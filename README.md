@@ -6,7 +6,7 @@ GeeQR is a free, privacy-friendly QR code generator that runs entirely in the
 browser. Enter content, customize the look, preview live and download a crisp
 PNG — no account, no paywall, no uploads.
 
-**Live demo:** https://isitgee.github.io/geeqr/
+**Live demo:** https://isitgee.github.io/GeeQR/
 
 ## Features
 
