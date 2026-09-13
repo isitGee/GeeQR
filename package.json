@@ -1,0 +1,37 @@
+{
+  "name": "geeqr",
+  "version": "1.0.0",
+  "description": "GeeQR — Free QR code generator. Create, customize and download QR codes instantly, entirely in your browser.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node scripts/smoke.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isitGee/GeeQR.git"
+  },
+  "keywords": [
+    "qr-code",
+    "qr-generator",
+    "react",
+    "vite"
+  ],
+  "author": "George Mwanga",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/isitGee/GeeQR/issues"
+  },
+  "homepage": "https://isitgee.github.io/geeqr/",
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "vite": "^8.3.0"
+  }
+}

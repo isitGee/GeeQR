@@ -1,0 +1,324 @@
+/* ------------------------------------------------------------------
+   Generator workspace
+   ------------------------------------------------------------------ */
+
+.generator-section {
+  scroll-margin-top: calc(var(--header-height) + var(--space-4));
+  padding-top: var(--space-4);
+}
+
+.generator-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.generator-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 60rem) {
+  .generator-grid {
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  }
+}
+
+.generator-main {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0;
+}
+
+@media (min-width: 48rem) {
+  .generator-main {
+    padding: var(--space-8);
+  }
+}
+
+@media (min-width: 60rem) {
+  .generator-main {
+    border-right: 1px solid var(--border);
+  }
+}
+
+.panel-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.panel-title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.panel-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+.appearance-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 40rem) {
+  .appearance-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.option-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.generator-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.generator-actions .btn-primary {
+  flex: 1 1 12rem;
+}
+
+/* Preview pane */
+.preview-pane {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background-color: var(--surface-2);
+  min-width: 0;
+}
+
+@media (min-width: 48rem) {
+  .preview-pane {
+    padding: var(--space-8);
+  }
+}
+
+.preview-frame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 19rem;
+  padding: var(--space-6);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+/* Subtle checkerboard so transparency/white codes stay visible */
+.preview-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(45deg, var(--surface-3) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--surface-3) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--surface-3) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--surface-3) 75%);
+  background-size: 1.25rem 1.25rem;
+  background-position: 0 0, 0 0.625rem, 0.625rem -0.625rem, -0.625rem 0;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.preview-frame > * {
+  position: relative;
+}
+
+.qr-canvas[hidden] {
+  display: none;
+}
+
+.qr-canvas {
+  width: min(100%, 19rem);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  image-rendering: pixelated;
+  animation: qr-pop var(--duration-base) var(--ease);
+}
+
+@keyframes qr-pop {
+  from {
+    opacity: 0.4;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Empty state */
+.preview-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-4);
+  max-width: 20rem;
+}
+
+.preview-empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--radius-lg);
+  background-color: var(--surface-3);
+  color: var(--text-3);
+}
+
+.preview-empty-icon svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.preview-empty strong {
+  font-size: var(--text-base);
+}
+
+.preview-empty p {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+}
+
+/* Error state */
+.preview-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-4);
+  max-width: 22rem;
+}
+
+.preview-error-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-full);
+  background-color: var(--error-soft);
+  color: var(--error);
+}
+
+.preview-error-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.preview-error p {
+  font-size: var(--text-sm);
+  color: var(--text-2);
+}
+
+/* Preview meta + actions */
+.preview-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--text-3);
+}
+
+.preview-meta code {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  padding: 0.1rem 0.4rem;
+  background-color: var(--surface-3);
+  border-radius: var(--radius-sm);
+}
+
+.preview-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+@media (max-width: 26rem) {
+  .preview-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Content readout (what the code contains) */
+.content-readout {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--text-2);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  min-width: 0;
+}
+
+.content-readout span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+}
+
+/* Privacy strip under the generator */
+.privacy-strip {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  margin-top: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  color: var(--text-2);
+}
+
+.privacy-strip svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  color: var(--success);
+}
+
+.privacy-strip strong {
+  color: var(--text);
+}
+
+/* Char count */
+.char-count {
+  font-size: var(--text-xs);
+  color: var(--text-3);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
